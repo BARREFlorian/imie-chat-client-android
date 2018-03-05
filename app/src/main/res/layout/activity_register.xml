@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="calvoitmove.projett.RegisterActivity"
+    android:layout_marginTop="30dp"
+    >
+
+    <TextView
+        android:id="@+id/nameuser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nom d'utilisateur"
+        android:textSize="24sp"
+        android:textColor="#F000"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintBottom_toTopOf="@id/namenewuser"
+
+        />
+
+    <EditText
+        android:id="@+id/namenewuser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/nameuser"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:hint="Nom d'utilisateur"
+        />
+
+    <TextView
+        android:id="@+id/mailuser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Adresse mail"
+        android:textSize="24sp"
+        android:textColor="#F000"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintTop_toBottomOf="@id/namenewuser"
+        />
+
+    <EditText
+        android:id="@+id/mailnewuser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/mailuser"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:hint="Entrez un mail"
+        />
+
+    <TextView
+        android:id="@+id/pwuser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/mailnewuser"
+        android:layout_marginTop="20dp"
+        android:text="Mot de passe"
+        android:textSize="24sp"
+        android:textColor="#F000"
+        android:layout_marginLeft="30dp"
+        />
+    <EditText
+        android:id="@+id/pwnewuser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/pwuser"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:hint="Entrez un mot de passe"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/pwnewuser"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="30dp"
+        android:text="Creer mon compte"
+        android:textSize="18sp"
+        />
+
+</android.support.constraint.ConstraintLayout>
