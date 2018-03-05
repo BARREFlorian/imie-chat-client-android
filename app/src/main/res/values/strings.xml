@@ -1,7 +1,11 @@
 <resources>
     <string name="app_name">ProjetT</string>
+
     <string name="select_channel_title">Selectionner votre salle:</string>
     <string name="create_channel_title">Creer votre salle :</string>
     <string name="join_channel_title">Rejoignez une salle :</string>
+    <string name="channel_title">a faire dynamique</string>
+    <string name="pagelogin">Connexion</string>
+    <string name="pageregister">Creer un compte</string>
 
 </resources>

@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity">
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/pagelogin">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,17 +19,32 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".RegisterActivity"
+            android:label="@string/pageregister"
+            android:parentActivityName=".LoginActivity">
+        </activity>
+
+        <activity
             android:name=".SelectChannelActivity"
-            android:label="@string/select_channel_title"></activity>
+            android:label="@string/select_channel_title">
+        </activity>
+
         <activity
             android:name=".CreateChannelActivity"
             android:label="@string/create_channel_title"
-            android:parentActivityName=".SelectChannelActivity"></activity>
+            android:parentActivityName=".SelectChannelActivity">
+        </activity>
         <activity
             android:name=".JoinChannelActivity"
             android:label="@string/join_channel_title"
-            android:parentActivityName=".SelectChannelActivity"></activity>
-        <activity android:name=".ChannelActivity"></activity>
+            android:parentActivityName=".SelectChannelActivity">
+        </activity>
+        <activity
+            android:name=".ChannelActivity"
+            android:label="@string/channel_title"
+            android:parentActivityName=".SelectChannelActivity">
+
+        </activity>
     </application>
 
 </manifest>
