@@ -16,6 +16,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".SelectChannelActivity"
+            android:label="@string/select_channel_title"></activity>
+        <activity
+            android:name=".CreateChannelActivity"
+            android:label="@string/create_channel_title"
+            android:parentActivityName=".SelectChannelActivity"></activity>
+        <activity
+            android:name=".JoinChannelActivity"
+            android:label="@string/join_channel_title"
+            android:parentActivityName=".SelectChannelActivity"></activity>
+        <activity android:name=".ChannelActivity"></activity>
     </application>
 
 </manifest>
