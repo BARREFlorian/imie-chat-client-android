@@ -53,6 +53,7 @@
         android:hint="Entrez votre mot de passe"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
+        android:inputType="textPassword"
         />
 
     <Button
