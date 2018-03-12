@@ -55,7 +55,7 @@
         app:layout_constraintTop_toBottomOf="@id/champ_nom_salle"
         app:layout_constraintHorizontal_bias="0.15"
 
-
+        android:onClick="changeToChannel"
         android:text="Creer la salle"
     />
 </android.support.constraint.ConstraintLayout>

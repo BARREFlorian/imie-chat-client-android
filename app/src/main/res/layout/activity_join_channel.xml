@@ -27,6 +27,7 @@
         app:layout_constraintTop_toBottomOf="@id/scrollListAvailableChannel"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_margin="10dp"
+        android:onClick="changeToChannel"
         />
 
 </android.support.constraint.ConstraintLayout>
