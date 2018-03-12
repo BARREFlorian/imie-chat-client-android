@@ -44,7 +44,8 @@
         android:layout_marginTop="10dp"
         android:layout_marginLeft="30dp"
         app:layout_constraintVertical_bias="0.2"
-        />
+    />
+
     <EditText
         android:id="@+id/password"
         android:layout_width="match_parent"
@@ -56,6 +57,7 @@
         android:inputType="textPassword"
         />
 
+
     <Button
         android:id="@+id/btn1"
         android:layout_marginTop="20dp"
@@ -65,7 +67,9 @@
         app:layout_constraintTop_toBottomOf="@id/password"
         app:layout_constraintRight_toLeftOf="@id/btn2"
         android:text="Creer un compte"
-        />
+        android:onClick="changeToRegister"
+    />
+
     <Button
         android:id="@+id/btn2"
         android:layout_marginTop="20dp"
@@ -75,7 +79,7 @@
         app:layout_constraintLeft_toRightOf="@id/btn1"
         app:layout_constraintRight_toRightOf="parent"
         android:text="Se connecter"
-        />
-
+        android:onClick="changeToLogIn"
+    />
 
 </android.support.constraint.ConstraintLayout>
