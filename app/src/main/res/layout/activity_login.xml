@@ -62,14 +62,15 @@
 
     <EditText
         android:id="@+id/password"
-        android:inputType="textPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/mdp"
         android:hint="Entrez votre mot de passe"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-    />
+        android:inputType="textPassword"
+        />
+
 
     <Button
         android:id="@+id/btn1"
