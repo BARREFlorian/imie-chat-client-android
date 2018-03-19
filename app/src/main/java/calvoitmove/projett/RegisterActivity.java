@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class RegisterActivity extends AppCompatActivity {
 
     @Override
@@ -14,8 +17,7 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
     }
 
-    public void changeToLogin(View view)
-    {
+    public void changeToLogin(View view) throws JSONException {
         /*
         *   Récupérer ce que l'user entre
         *   dans les champs de l'activity register
@@ -24,21 +26,37 @@ public class RegisterActivity extends AppCompatActivity {
         EditText password = findViewById(R.id.pwnewuser);
         EditText mail = findViewById(R.id.mailnewuser);
 
-        String enteredUsername = String.valueOf(username.getText());
-        String enteredPassword = String.valueOf(password.getText());
-        String enteredMail = String.valueOf(mail.getText());
+        String nom_user = String.valueOf(username.getText());
+        String mdp_user = String.valueOf(password.getText());
+        String email_user = String.valueOf(mail.getText());
 
         /*
         *   Envoyer le username, le password et le mail
         *   en chaines de caractères (JSON) au seveur
         */
 
+        JSONObject userJSON = new JSONObject();
+        JSONObject infoJSON = new JSONObject();
+
+        infoJSON.put("type","inscription");
+        infoJSON.put("username", nom_user);
+        infoJSON.put("password", mdp_user);
+        infoJSON.put("mail", email_user);
+
+        userJSON.put("user",infoJSON);
+
+        String sendableUser = userJSON.toString();
+
+
 
         /*
         * Change activity vers le login ou il peut utiliser le compte qu'il viens d'utiliser
         * */
-
         Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
         startActivityForResult(intent, 123);
+        /*
+        * Ou pas
+        * */
+
     }
 }
