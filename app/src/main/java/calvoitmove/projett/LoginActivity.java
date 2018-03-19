@@ -3,8 +3,10 @@ package calvoitmove.projett;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -47,15 +49,23 @@ public class LoginActivity extends AppCompatActivity {
         String sendableUser = userJSON.toString();
 
 
-        /*
-        *   Lien avec l'activity join Channel
-        * */
-        Intent intent = new Intent(LoginActivity.this, SelectChannelActivity.class);
-        startActivityForResult(intent, 123);
-        /*
-        * Ou pas
-        * */
+        boolean tokenConnect =false;
 
+        if(tokenConnect)
+        {
+            /*
+            *   Lien avec l'activity join Channel
+            **/
+            Intent intent = new Intent(LoginActivity.this, SelectChannelActivity.class);
+            startActivityForResult(intent, 123);
+        }
+        else
+        {
+             /*
+             *  Ou pas
+             **/
+            Toast.makeText(this, "pas de token de connection", Toast.LENGTH_LONG).show();
+        }
     }
 
     public void changeToRegister(View view)

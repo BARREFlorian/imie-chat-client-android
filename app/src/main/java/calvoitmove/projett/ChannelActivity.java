@@ -2,6 +2,7 @@ package calvoitmove.projett;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 
 import org.json.JSONException;
@@ -12,11 +13,15 @@ public class ChannelActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+        String channelName = "temp";
+        setTitle(channelName);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_channel);
     }
 
-    public void SendNudes() throws JSONException {
+    public void SendText(View view) throws JSONException
+    {
         /*
         *   Récupérer ce que l'user entre
         *   dans les champs de l'activity connexion

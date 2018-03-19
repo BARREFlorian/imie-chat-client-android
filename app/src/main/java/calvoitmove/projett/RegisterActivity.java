@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -47,16 +48,22 @@ public class RegisterActivity extends AppCompatActivity {
 
         String sendableUser = userJSON.toString();
 
+        boolean replyServer =false;
 
-
-        /*
-        * Change activity vers le login ou il peut utiliser le compte qu'il viens d'utiliser
-        * */
-        Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-        startActivityForResult(intent, 123);
-        /*
-        * Ou pas
-        * */
-
+        if(replyServer)
+        {
+            /*
+            * Change activity vers le login ou il peut utiliser le compte qu'il viens d'utiliser
+            * */
+            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+            startActivityForResult(intent, 123);
+        }
+        else
+        {
+            /*
+            * Ou pas
+            * */
+            Toast.makeText(this, "Erreur serveur", Toast.LENGTH_LONG).show();
+        }
     }
 }
