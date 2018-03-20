@@ -3,7 +3,6 @@ package calvoitmove.projett;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -12,16 +11,18 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 
-public class LoginActivity extends AppCompatActivity {
-
-
+public class LoginActivity extends AppCompatActivity
+{
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
     }
 
-    public void changeToLogIn(View view) throws JSONException {
+    public void changeToLogIn(View view) throws JSONException
+    {
         /*
         *   Récupérer ce que l'user entre
         *   dans les champs de l'activity connexion
@@ -48,7 +49,6 @@ public class LoginActivity extends AppCompatActivity {
 
         String sendableUser = userJSON.toString();
 
-
         boolean tokenConnect =false;
 
         if(tokenConnect)
@@ -73,5 +73,4 @@ public class LoginActivity extends AppCompatActivity {
         Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
         startActivityForResult(intent, 123);
     }
-
 }

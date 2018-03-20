@@ -9,15 +9,17 @@ import android.widget.EditText;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class CreateChannelActivity extends AppCompatActivity {
-
+public class CreateChannelActivity extends AppCompatActivity
+{
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_channel);
     }
 
-    public void changeToChannel(View view) throws JSONException {
+    public void changeToChannel(View view) throws JSONException
+    {
         /*
         * recupérer nom channel depuis le edit text
         * */
@@ -39,17 +41,23 @@ public class CreateChannelActivity extends AppCompatActivity {
 
         String sendableChannel = channelJSON.toString();
 
+        boolean creationOk = false;
 
-
-        /*
-        * passer a la view de listes de tous les channels
-        * avec celle qui viens d'être créer
-        * */
-        Intent intent = new Intent(CreateChannelActivity.this, ChannelActivity.class);
-        startActivityForResult(intent, 123);
-        /*
-        * Ou pas
-        * */
+        if(creationOk)
+        {
+            /*
+            * passer a la view de listes de tous les channels
+            * avec celle qui viens d'être créer
+            * */
+            Intent intent = new Intent(CreateChannelActivity.this, ChannelActivity.class);
+            startActivityForResult(intent, 123);
+        }
+        else
+        {
+            /*
+            * Ou pas
+            * */
+        }
 
     }
 }
