@@ -11,16 +11,18 @@ import org.java_websocket.client.WebSocketClient;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class RegisterActivity extends AppCompatActivity {
-
+public class RegisterActivity extends AppCompatActivity
+{
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
     }
 
 
-    public void changeToLogin(View view) throws JSONException {
+    public void changeToLogin(View view) throws JSONException
+    {
         /*
         *   Récupérer ce que l'user entre
         *   dans les champs de l'activity register

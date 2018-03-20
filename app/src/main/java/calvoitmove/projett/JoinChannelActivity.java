@@ -6,10 +6,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-public class JoinChannelActivity extends AppCompatActivity {
-
+public class JoinChannelActivity extends AppCompatActivity
+{
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_join_channel);
     }
@@ -33,7 +34,5 @@ public class JoinChannelActivity extends AppCompatActivity {
             * */
             Toast.makeText(this, "Erreur serveur", Toast.LENGTH_LONG).show();
         }
-
-
     }
 }
