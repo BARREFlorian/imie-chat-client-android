@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+import org.java_websocket.client.WebSocketClient;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -18,11 +19,13 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
     }
 
+
     public void changeToLogin(View view) throws JSONException {
         /*
         *   Récupérer ce que l'user entre
         *   dans les champs de l'activity register
         */
+
         EditText username = findViewById(R.id.namenewuser);
         EditText password = findViewById(R.id.pwnewuser);
         EditText mail = findViewById(R.id.mailnewuser);
