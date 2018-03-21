@@ -36,8 +36,9 @@ public class CreateChannelActivity extends AppCompatActivity
         JSONObject infoJSON = new JSONObject();
 
         infoJSON.put("type", "selection");
-        infoJSON.put("username", nom_channel);
-        channelJSON.put("channel",infoJSON);
+        infoJSON.put("channelName", nom_channel);
+
+        channelJSON.put("action",infoJSON);
 
         String sendableChannel = channelJSON.toString();
 

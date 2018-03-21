@@ -41,11 +41,11 @@ public class ChannelActivity extends AppCompatActivity
         JSONObject infoJSON = new JSONObject();
 
         infoJSON.put("type","affichage");
-        infoJSON.put("username", username);
-        infoJSON.put("contenu", contenu_message);
-        infoJSON.put("channelname", channel);
+        infoJSON.put("userName", username);
+        infoJSON.put("contenuMessage", contenu_message);
+        infoJSON.put("channelName", channel);
 
-        messageJSON.put("message",infoJSON);
+        messageJSON.put("action",infoJSON);
 
         String sendableMessage = messageJSON.toString();
     }

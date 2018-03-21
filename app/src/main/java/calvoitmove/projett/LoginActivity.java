@@ -42,10 +42,10 @@ public class LoginActivity extends AppCompatActivity
         JSONObject infoJSON = new JSONObject();
 
         infoJSON.put("type","connection");
-        infoJSON.put("username", nom_user);
-        infoJSON.put("password", mdp_user);
+        infoJSON.put("userName", nom_user);
+        infoJSON.put("userPassword", mdp_user);
 
-        userJSON.put("user",infoJSON);
+        userJSON.put("action",infoJSON);
 
         String sendableUser = userJSON.toString();
 

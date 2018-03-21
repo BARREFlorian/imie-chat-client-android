@@ -45,11 +45,11 @@ public class RegisterActivity extends AppCompatActivity
         JSONObject infoJSON = new JSONObject();
 
         infoJSON.put("type","inscription");
-        infoJSON.put("username", nom_user);
-        infoJSON.put("password", mdp_user);
-        infoJSON.put("mail", email_user);
+        infoJSON.put("userName", nom_user);
+        infoJSON.put("userPassword", mdp_user);
+        infoJSON.put("userEmail", email_user);
 
-        userJSON.put("user",infoJSON);
+        userJSON.put("action",infoJSON);
 
         String sendableUser = userJSON.toString();
 
@@ -57,6 +57,7 @@ public class RegisterActivity extends AppCompatActivity
 
         if(replyServer)
         {
+            Toast.makeText(this, "You good fam", Toast.LENGTH_SHORT).show();
             /*
             * Change activity vers le login ou il peut utiliser le compte qu'il viens d'utiliser
             * */
