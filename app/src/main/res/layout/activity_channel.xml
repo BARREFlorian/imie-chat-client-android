@@ -7,34 +7,38 @@
     tools:context="calvoitmove.projett.ChannelActivity">
 
     <android.support.v7.widget.RecyclerView
-        android:padding="10dp"
         android:id="@+id/RecyclerViewMessageChat"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
 
         app:layout_constraintBottom_toTopOf="@id/messageBox"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
     </android.support.v7.widget.RecyclerView>
 
     <EditText
         android:id="@+id/messageBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="11dp"
+        android:background="#d4d4d4"
+        android:hint="Entrer votre message ici ..."
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/post"
+        app:layout_constraintTop_toBottomOf="@id/RecyclerViewMessageChat" />
 
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-
-        android:hint="Entrer votre message ici ..."
-    />
     <Button
         android:onClick="SendText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/post"
         android:text="Post"
+        android:background="#c2c2c2"
+        app:layout_constraintTop_toBottomOf="@id/RecyclerViewMessageChat"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@id/messageBox"
         app:layout_constraintRight_toRightOf="parent"/>

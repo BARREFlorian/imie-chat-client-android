@@ -23,12 +23,12 @@
         android:id="@+id/createChannel"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Creer une salle "
+        android:text="Creer\n une salle "
 
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/joinChannel"
-        app:layout_constraintTop_toBottomOf="@id/RecylerListJoinedClient"
         app:layout_constraintBottom_toBottomOf="parent"
+
         android:layout_marginLeft="10dp"
         android:layout_marginBottom="10dp"
         android:onClick="changeToCreate"
@@ -38,12 +38,12 @@
         android:id="@+id/joinChannel"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Rejoindre une salle"
+        android:text="Rejoindre\n une salle"
 
         app:layout_constraintLeft_toRightOf="@id/createChannel"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/RecylerListJoinedClient"
         app:layout_constraintBottom_toBottomOf="parent"
+
         android:layout_marginRight="10dp"
         android:layout_marginBottom="10dp"
         android:onClick="changeToJoin"

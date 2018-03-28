@@ -64,7 +64,8 @@ public class CreateChannelActivity extends AppCompatActivity
         client = new OkHttpClient();
     }
 
-    public void changeToChannel(View view) throws JSONException {
+    public void changeToChannel(View view) throws JSONException
+    {
         /*
         * recupérer nom channel depuis le edit text
         * */
@@ -96,29 +97,32 @@ public class CreateChannelActivity extends AppCompatActivity
 
         boolean creationOk = true;
 
-        if (creationOk) {
+        if (creationOk)
+        {
             /*
             * passer a la view de listes de tous les channels
             * avec celle qui viens d'être créer
             * */
-            Intent intent = new Intent(CreateChannelActivity.this, ChannelActivity.class);
+            Intent intent = new Intent(CreateChannelActivity.this, SelectChannelActivity.class);
             startActivityForResult(intent, 123);
             Toast.makeText(this, "Creation channel ok", Toast.LENGTH_LONG).show();
-        } else {
+        }
+        else
+        {
             /*
             * Ou pas
             * */
         }
     }
-        private void start(String toSend)
-        {
-            Request request = new Request.Builder().url("ws://10.0.2.2:8083").build();
-            CreateChannelActivity.EchoWebSocketListener listener = new CreateChannelActivity.EchoWebSocketListener();
-            WebSocket ws = client.newWebSocket(request, listener);
-            //listener.onOpen(ws, reponse);
-            ws.send(toSend);
-            client.dispatcher().executorService().shutdown();
-        }
+    private void start(String toSend)
+    {
+        Request request = new Request.Builder().url("ws://10.0.2.2:8083").build();
+        CreateChannelActivity.EchoWebSocketListener listener = new CreateChannelActivity.EchoWebSocketListener();
+        WebSocket ws = client.newWebSocket(request, listener);
+        //listener.onOpen(ws, reponse);
+        ws.send(toSend);
+        client.dispatcher().executorService().shutdown();
+    }
 
 //    private void output(final String txt)
 //    {

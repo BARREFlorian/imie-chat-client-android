@@ -36,6 +36,7 @@ public class SelectChannelActivity extends AppCompatActivity
 
     public void goToRelatedChannel(View view)
     {
+
         Intent intent = new Intent(SelectChannelActivity.this, ChannelActivity.class);
         startActivityForResult(intent, 123);
     }
