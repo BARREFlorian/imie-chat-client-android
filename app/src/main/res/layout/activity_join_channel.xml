@@ -6,15 +6,15 @@
     android:layout_height="match_parent"
     tools:context="calvoitmove.projett.JoinChannelActivity">
 
-    <ScrollView
-        android:id="@+id/scrollListAvailableChannel"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/RecyclerListAvailableChannel"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/joinChannel"
         android:layout_width="match_parent"
         android:layout_height="430dp">
-    </ScrollView>
+    </android.support.v7.widget.RecyclerView>
 
     <Button
         android:id="@+id/joinChannel"
@@ -24,7 +24,7 @@
 
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/scrollListAvailableChannel"
+        app:layout_constraintTop_toBottomOf="@id/RecyclerListAvailableChannel"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_margin="10dp"
         android:onClick="changeToChannel"
