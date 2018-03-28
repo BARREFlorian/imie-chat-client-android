@@ -7,7 +7,7 @@ package calvoitmove.projett;
 public class Retour
 {
 
-    String content;
+    private String content;
 
     public String getContent()
     {

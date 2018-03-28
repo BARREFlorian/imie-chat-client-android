@@ -66,7 +66,8 @@ public class RegisterActivity extends AppCompatActivity
     }
 
 
-    public void changeToLogin(View view) throws JSONException {
+    public void changeToLogin(View view) throws JSONException
+    {
         /*
         *   Récupérer ce que l'user entre
         *   dans les champs de l'activity register
@@ -100,22 +101,16 @@ public class RegisterActivity extends AppCompatActivity
         Log.e("Ce que l'on envois",""+sendableUser);
         start(sendableUser);
 
-        //Check the return from the server
-        boolean replyServer = false;
-
-        if (replyServer) {
-            Toast.makeText(this, "You good fam", Toast.LENGTH_SHORT).show();
-            /*
-            * Change activity vers le login ou il peut utiliser le compte qu'il viens d'utiliser
-            * */
-            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-            startActivityForResult(intent, 123);
-            /*
-            * Ou pas
-            * */
-            Toast.makeText(this, "Inscription complete", Toast.LENGTH_LONG).show();
-        }
-
+        Toast.makeText(this, "You good fam", Toast.LENGTH_SHORT).show();
+        /*
+        * Change activity vers le login ou il peut utiliser le compte qu'il viens d'utiliser
+        * */
+        Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+        startActivityForResult(intent, 123);
+        /*
+        * Ou pas
+        * */
+        Toast.makeText(this, "Inscription complete", Toast.LENGTH_LONG).show();
     }
 
     private void start(String toSend)
@@ -130,9 +125,11 @@ public class RegisterActivity extends AppCompatActivity
 
 //    private void output(final String txt)
 //    {
-//        runOnUiThread(new Runnable() {
+//        runOnUiThread(new Runnable()
+//        {
 //            @Override
-//            public void run() {
+//            public void run()
+//            {
 //                output.setText(output.getText().toString() + "\n\n" + txt);
 //            }
 //        });

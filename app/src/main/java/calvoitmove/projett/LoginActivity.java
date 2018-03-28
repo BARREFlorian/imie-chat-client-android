@@ -24,6 +24,9 @@ public class LoginActivity extends AppCompatActivity
     private OkHttpClient client;
     private Retour retour = new Retour();
     private User user = new  User();
+//    private String retourServer="";
+//    private String apiKey ="";
+
 
     private final class EchoWebSocketListener extends WebSocketListener
     {
@@ -88,40 +91,37 @@ public class LoginActivity extends AppCompatActivity
 
         JSONObject infoJSON = new JSONObject();
 
-        infoJSON.put("type","connection");
+        infoJSON.put("type","connexion");
         infoJSON.put("userName", nom_user);
         infoJSON.put("userPassword", mdp_user);
 
         String sendableUser = infoJSON.toString();
+        Log.e("ce que l'on envois :",""+sendableUser);
         start(sendableUser);
 
         user.setNom_user(nom_user);
 
-//        String retourServer = retour.getContent();
-//        Log.e("Retour server content",""+retourServer);
-//
-//        JSONObject sentByServer = new JSONObject(retourServer);
-
         /*
-        * faux if/else pour donner l'illusion parce que le serveur ne fonctionne pas
-        * */
-        if(mdp_user.equals("password"))
-        {
+        *  if/else a implémenter pour gérer le retour serveur
+        */
+
+//        if(apiKey.equals(""))
+//       {
             /*
             *   Lien avec l'activity join Channel
+            **/
+//            Toast.makeText(this, "Mauvais inputs", Toast.LENGTH_LONG).show();
+//        }
+//       else
+//        {
+            /*
+            *  Ou pas
             **/
             Intent intent = new Intent(LoginActivity.this, SelectChannelActivity.class);
             Log.e("Valeur de nom_user",nom_user);
             intent.putExtra("EXTRA_USERNAME", nom_user);
             startActivityForResult(intent, 123);
-        }
-       else
-        {
-            /*
-            *  Ou pas
-            **/
-            Toast.makeText(this, "Mauvais inputs", Toast.LENGTH_LONG).show();
-        }
+//        }
     }
 
     public void changeToRegister(View view)
@@ -133,10 +133,30 @@ public class LoginActivity extends AppCompatActivity
     private void start(String toSend)
     {
         Request request = new Request.Builder().url("ws://10.0.2.2:8083").build();
-        LoginActivity.EchoWebSocketListener listener = new LoginActivity.EchoWebSocketListener();
+        EchoWebSocketListener listener = new EchoWebSocketListener();
         WebSocket ws = client.newWebSocket(request, listener);
-        //listener.onOpen(ws, reponse);
         ws.send(toSend);
+
+        /*
+        * Retour server a faire une fois que le listener est maitriser
+        */
+
+//        retourServer = retour.getContent();
+//        Log.e("Retour server content",""+retourServer);
+//
+//        JSONObject sentByServer = null;
+//        try {
+//            sentByServer = new JSONObject(retourServer);
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
+//        Log.e("JSONED server content",""+sentByServer);
+//
+//        try {
+//            apiKey = sentByServer.getString("apiKey");
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
 
         client.dispatcher().executorService().shutdown();
     }

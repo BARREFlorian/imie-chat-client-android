@@ -18,7 +18,7 @@ public class ChannelActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
-        String channelName = "temp";
+        String channelName = "exemple";
         setTitle(channelName);
 
         super.onCreate(savedInstanceState);
